@@ -10,7 +10,7 @@ To install flutter packages follow this link
 - [Install Packages](https://flutter.dev/docs/development/packages-and-plugins/using-packages)
 
 ## GIF
-![Alt Text](https://github.com/aniket-bhange/flutter-sample-app/blob/master/nutiapp.gif =250x400)
+<img src="https://github.com/aniket-bhange/flutter-sample-app/blob/master/nutiapp.gif" width="250" height="400"/>
 
 ## Getting Started
 
