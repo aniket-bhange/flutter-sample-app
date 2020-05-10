@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+Add google-services.json file in android > app folder to connect with firebase
+Also add firebaseConfi in your web > index.html file.
+
+To install flutter packages follow this link
+- [Install Packages](https://flutter.dev/docs/development/packages-and-plugins/using-packages)
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

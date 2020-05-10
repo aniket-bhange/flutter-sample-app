@@ -13,21 +13,29 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  TextStyle textStyle = TextStyle( fontFamily: 'Montserrat', fontSize: 12.0, color: Colors.blue);
+
   Future<bool> _onbackPress(){
     return showDialog(
       context: context,
       builder: (context) => new AlertDialog(
-        title: new Text('Are you sure?'),
-        content: new Text('Do you want to exit an App'),
+        title: new Text('Are you sure?', style: textStyle.copyWith(color: Colors.grey, fontSize: 18.0, fontWeight: FontWeight.bold),),
+        content: new Text('Do you want to exit an App', style: textStyle.copyWith(color: Colors.grey, fontSize: 15.0,)),
         actions: <Widget>[
           new GestureDetector(
             onTap: () => Navigator.of(context).pop(false),
-            child: Text("NO"),
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text("NO", style: textStyle,),
+            ),
           ),
           SizedBox(height: 16),
           new GestureDetector(
             onTap: () => SystemNavigator.pop(),
-            child: Text("YES"),
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text("YES", style: textStyle,),
+            ),
           ),
         ],
       ),
@@ -162,7 +170,6 @@ class _HomeScreenState extends State<HomeScreen> {
                      fit: BoxFit.cover,
                      height: 75.0,
                      width: 75.0,
-
                    ),
                 ),
                 SizedBox(width: 10.0,),

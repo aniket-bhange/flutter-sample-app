@@ -90,82 +90,91 @@ class _RegisteruserScreenState extends State<RegisteruserScreen> {
 
     return Scaffold(
       backgroundColor: Color(0xFF7A9BEE),
-      body: Column(
-        
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top:20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      
+
+      body:
+      SingleChildScrollView(
+        child: Builder(
+          builder: (context){
+            return Column(
               children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.arrow_back_ios), 
-                  onPressed: (){
-                    Navigator.of(context).pop();
-                  },
-                  color: Colors.white,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 80.0,
-            decoration: BoxDecoration(
-              color: Colors.transparent
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                SizedBox(width: 70.0,),
-                Text('New', style: TextStyle(color: Colors.white, fontSize: 30.0, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),),
-                SizedBox(width: 10.0,),
-                Text('User', style: TextStyle(color: Colors.white, fontSize: 30.0, fontFamily: 'Montserrat', fontWeight: FontWeight.normal)),
-              ],
-            ),
-          ),
-          SizedBox(height: 20.0,),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height - 168.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(70.0))
-            ),
-            child: Form(
-              key: _registerForm,
-              child: Container(
-                margin: EdgeInsets.only(top: 130.0),
-                // width: MediaQuery.of(context).size.width - 40.0,
-                child: Column(
-                  
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    nameField,
-                    SizedBox(height: 20.0,),
-                    emailField,
-                    SizedBox(height: 20.0,),
-                    passwordField,
-                    SizedBox(height: 20.0,),
-                    Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Color(0xFF7A9BEE),
-                      child: MaterialButton(
-                        onPressed: (){ saveUser(); },
-                        minWidth: MediaQuery.of(context).size.width - 50.0,
-                        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                        child: Text('Create New User', style: textStyle.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0), textAlign: TextAlign.center,),
+                Padding(
+                  padding: const EdgeInsets.only(top:20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.arrow_back_ios), 
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        },
+                        color: Colors.white,
                       ),
-                    )
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ),
-          ),
-              
-        ],
-      ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 80.0,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      SizedBox(width: 70.0,),
+                      Text('New', style: TextStyle(color: Colors.white, fontSize: 30.0, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),),
+                      SizedBox(width: 10.0,),
+                      Text('User', style: TextStyle(color: Colors.white, fontSize: 30.0, fontFamily: 'Montserrat', fontWeight: FontWeight.normal)),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20.0,),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height - 168.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(70.0))
+                  ),
+                  child: Form(
+                    key: _registerForm,
+                    child: Container(
+                      margin: EdgeInsets.only(top: 130.0),
+                      // width: MediaQuery.of(context).size.width - 40.0,
+                      child: Column(
+                        
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          nameField,
+                          SizedBox(height: 20.0,),
+                          emailField,
+                          SizedBox(height: 20.0,),
+                          passwordField,
+                          SizedBox(height: 20.0,),
+                          Material(
+                            elevation: 5.0,
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Color(0xFF7A9BEE),
+                            child: MaterialButton(
+                              onPressed: (){ saveUser(); },
+                              minWidth: MediaQuery.of(context).size.width - 50.0,
+                              padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                              child: Text('Create New User', style: textStyle.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0), textAlign: TextAlign.center,),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                    
+              ],
+            );
+          },
+        ),
+      ) 
+      
     );
   }
 

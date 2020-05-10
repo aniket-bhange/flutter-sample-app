@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
 
   Future<bool> _getPrefs() async{
     SharedPreferences sharedPrefs = await SharedPreferences.getInstance();
+    sharedPrefs.remove('usertoken');
     var userToken = sharedPrefs.getString('usertoken');
     return userToken is String;
   }
